@@ -60,14 +60,14 @@ body {
 
 .click-text {
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
   color: #fff;
   text-align: center;
   animation: blink-text 1s step-end infinite;
-  z-index: 10; /* Ensure it appears above other elements */
+  z-index: 10;
 }
 
 /* Hidden class */
