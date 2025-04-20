@@ -8,7 +8,7 @@ window.onload = () => {
   const bgMusic = document.getElementById("bg-music");
   const statusText = document.getElementById("status-text");
   const ctx = canvas.getContext("2d");
-  ctx.imageSmoothingEnabled = false;
+  ctx.imageSmoothingEnabled = true;
 
   const frameSpeed = 100;
   const maxSpeed = 60;
@@ -95,8 +95,8 @@ window.onload = () => {
     ctx.textAlign = "center";
     ctx.fillText(
       `Sean & Powi Bond: ${Math.floor(bondLevel)}%`,
-      canvas.width / 2,
-      30
+      canvas.width - 150,
+      80
     );
   }
 
