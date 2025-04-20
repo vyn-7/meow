@@ -116,32 +116,39 @@ body {
   left: 0;
   right: 0;
   display: flex;
-  justify-content: flex-start;
-  padding: 0 30px;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 20px;
   z-index: 99;
   pointer-events: none;
 }
 
 #touch-controls button {
   font-family: "Press Start 2P", cursive;
-  font-size: 28px;
-  padding: 18px 36px;
+  font-size: 20px;
+  padding: 20px 40px;
   background-color: #68528d11;
   color: #fff;
   border: 4px solid #fff;
   outline: 2px solid #1a1a1a8a;
-  border-radius: 0;
+  border-radius: 8px;
   box-shadow: 4px 4px 0 #252525a6;
   text-shadow: 1px 1px 0 #3131319d;
   image-rendering: pixelated;
   cursor: pointer;
-  opacity: 0.2;
+  opacity: 0.8;
   transition: transform 0.1s ease, opacity 0.2s ease;
   pointer-events: auto;
 }
 
-#touch-controls button:hover {
-  opacity: 0.9;
+#touch-controls button:hover,
+#touch-controls button:active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+#touch-controls button:active {
+  box-shadow: 2px 2px 0 #252525a6;
   transform: scale(1.05);
 }
 
@@ -204,5 +211,15 @@ body {
     top: 10px;
     right: 15px;
     padding: 4px 8px;
+  }
+
+  #touch-controls {
+    bottom: 10px;
+    padding: 0 10px;
+  }
+
+  #touch-controls button {
+    font-size: 16px;
+    padding: 16px 32px;
   }
 }
