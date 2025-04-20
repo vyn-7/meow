@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Meow</title>
+    <link rel="icon" type="image/png" href="./assets/powi.png" />
+    <link rel="stylesheet" href="style.css" />
+    <audio id="bg-music" src="./assets/audio/bg-music.mp3" loop></audio>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="loading-screen">
+      <p>Loading...</p>
+    </div>
+
+    <div id="menu-screen" class="hidden">
+      <h1 class="title">POWSHAN</h1>
+      <p class="click-text">Click anywhere to proceed.</p>
+    </div>
+    <div id="game-wrapper" class="hidden">
+      <canvas id="game-canvas"></canvas>
+      <div id="status-text">Time: 12:00 AM</div>
+      <div id="message-log"></div>
+    </div>
+    <div id="touch-controls" class="hidden">
+      <button id="left-btn">⟵</button>
+      <button id="right-btn">⟶</button>
+      <button id="spawn-btn">Spawn mouse</button>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
