@@ -61,8 +61,13 @@ body {
 .click-text {
   position: absolute;
   bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 20px;
+  color: #fff;
+  text-align: center;
   animation: blink-text 1s step-end infinite;
+  z-index: 10; /* Ensure it appears above other elements */
 }
 
 /* Hidden class */
@@ -136,7 +141,7 @@ body {
   text-shadow: 1px 1px 0 #3131319d;
   image-rendering: pixelated;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.2;
   transition: transform 0.1s ease, opacity 0.2s ease;
   pointer-events: auto;
 }
