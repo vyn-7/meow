@@ -90,7 +90,7 @@ window.onload = () => {
   }
 
   function updateBondLevel() {
-    ctx.font = "16px 'Press Start 2P'";
+    ctx.font = "11px 'Press Start 2P'";
     ctx.fillStyle = "#ffffff";
     ctx.textAlign = "center";
     ctx.fillText(
@@ -135,7 +135,7 @@ window.onload = () => {
       this.frameTimer = 0;
       this.currentFrame = 0;
       this.x = Math.floor(Math.random() * (2000 + canvas.width)) - 1000;
-      this.y = canvas.height - this.drawHeight * 3;
+      this.y = canvas.height - this.drawHeight * 3.6;
       this.velocity = 0;
       this.speed = 2;
       this.facingLeft = false;
@@ -174,8 +174,8 @@ window.onload = () => {
       if (!this.isDragging) {
         this.y += this.gravity;
 
-        if (this.y >= canvas.height - this.drawHeight * 3) {
-          this.y = canvas.height - this.drawHeight * 3;
+        if (this.y >= canvas.height - this.drawHeight * 3.6) {
+          this.y = canvas.height - this.drawHeight * 3.6;
           this.gravity = 0;
           this.x = this.x + this.velocity;
         } else {
@@ -229,7 +229,7 @@ window.onload = () => {
       this.currentFrame = 0;
       this.facingLeft = false;
       this.x = Math.floor(Math.random() * (2000 + canvas.width)) - 1000;
-      this.y = canvas.height - this.drawHeight * 2;
+      this.y = canvas.height - this.drawHeight * 2.3;
       this.velocity = 0;
       this.speed = 1.5;
       this.behaviorTimer = 0;
@@ -274,10 +274,12 @@ window.onload = () => {
         );
         const dist = Math.abs(this.x - otherCat.x);
 
-        if (dist < 100 && Math.abs(this.y - otherCat.y) < 50) {
+        if (dist < 20 && Math.abs(this.y - otherCat.y) < 50) {
           bondLevel = Math.min(100, bondLevel + deltaTime * 0.01);
           if (this.name === "sean" && this.bondMessageCooldown <= 0) {
             showMessage("sean interacted with powi");
+            this.isHappy = true;
+            this.happyTimer = 0;
             this.bondMessageCooldown = 5000;
           }
         }
@@ -327,7 +329,7 @@ window.onload = () => {
         Math.min(1000 + canvas.width - this.drawWidth, this.x + this.velocity)
       );
 
-      this.y = canvas.height - this.drawHeight * 2;
+      this.y = canvas.height - this.drawHeight * 2.3;
 
       if (this.velocity !== 0 && this.currentFrame % 9 === 0) {
         particles.push(
@@ -386,7 +388,7 @@ window.onload = () => {
   function drawLayer(start, end) {
     for (let i = end; i >= start; i--) {
       const img = background.get(i);
-      const scale = 1.5;
+      const scale = 2;
       const width = img.width * scale;
       const height = img.height * scale;
       const y = canvas.height - height;
@@ -530,7 +532,7 @@ window.onload = () => {
         )
       );
       selectedMouse.y = Math.min(
-        canvas.height - selectedMouse.drawHeight * 3,
+        canvas.height - selectedMouse.drawHeight * 3.6,
         pos.y - selectedMouse.offsetY
       );
     }
@@ -606,7 +608,7 @@ window.onload = () => {
         document.getElementById("touch-controls").classList.remove("hidden");
         statusText.classList.remove("hidden");
 
-        bgMusic.volume = 0.075;
+        bgMusic.volume = 0.5;
         bgMusic.play().catch(console.error);
         playing = true;
       }, 1000);
