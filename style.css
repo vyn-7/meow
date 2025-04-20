@@ -93,6 +93,12 @@ body {
 }
 
 .message-entry {
+  font-size: 14px; /* Default font size */
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  padding: 6px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
   animation: pop-in 0.3s ease-out forwards;
   margin-bottom: 6px;
 }
@@ -207,8 +213,7 @@ body {
   }
 
   .click-text {
-    font-size: 16px;
-    bottom: 20px;
+    font-size: 14px;
   }
 
   #status-text {
@@ -226,5 +231,11 @@ body {
   #touch-controls button {
     font-size: 16px;
     padding: 16px 32px;
+  }
+
+  .message-entry {
+    font-size: 10px; /* Reduce font size for mobile */
+    padding: 4px 8px; /* Adjust padding for smaller screens */
+    margin-bottom: 4px; /* Reduce spacing between messages */
   }
 }
